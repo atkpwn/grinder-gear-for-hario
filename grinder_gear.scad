@@ -38,6 +38,15 @@ module grinder_gear(core_width = 4.64,
                     }
                }
           }
+          rotate([0, 0, 45]) {
+               lock_width = 3.5;
+               lock_depth = 4.5;
+               dist = 9 + lock_width/2;
+               translate([dist, 0, 0])
+                    cube([lock_width, lock_depth, 10], center=true);
+               translate([-dist, 0, 0])
+                    cube([lock_width, lock_depth, 10], center=true);
+          }
      }
 
 }
